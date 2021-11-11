@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device">
+        <title>Basic Input Types</title>
+        <link rel="stylesheet" href="simpleform.css">
+    </head>
+    <body>
+    <form>
+        <header class="headerContainer" ><h1>HTML 5 form input field</h1></header>
+        <div style="text-align: center;">
+            <label for="text"> Text input type for Name:</label>
+            <input type="text" id="text" name="text" >
+            <errpr-output class="text-error" for="text"> </errpr-output>
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <label for="pwd">Password input type:</label>
+            <input type="password" id="pwd" name="pwd">
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <label for="email"> Email input type:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <label for="number"> Number input type:</label>
+            <input type="number" id="number" name="number">
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <label for="tel"> Tel input type:</label>
+            <input type="tel" id="tel" name="tel">
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <label for="search"> Search input type:</label>
+            <input type="search" id="search" name="search" placeholder="search the name">
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <label for="party"> Choose a Date and Time:</label>
+            <input type="datetime-local" id="party" name="bday">
+        </div>
+        <br>
+        <div style="text-align: center;">
+            <label for="salary"> Choose your salary:</label>
+            <input type="range" id="salary" name="salary">
+        </div>
+        <div style="text-align: center;">
+            <button>Submit</button>
+        </div>
+        
+
+
+    </form>
+    <script>
+        const text=document.querySelector("#text");
+        const textError=document.querySelector('.text-error');
+        text.addEventListener('input',function(){
+            let nameRegex=RegExp('^[A-Z]{1}[a-z]{3}$');
+            if(nameRegex.test(text.value)){
+                textError.textContent="";
+
+            }
+            else textError.textContent="Name is incorrect";
+
+        });
+
+    </script>
+
+    </body>
+
+
+
+
+
+</html>
